@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+		<%- include partial/head %>
+  </head>
+  <body>
+		<div class="container">
+			 <div class="main row align-items-center">
+					<div class="col-md-12">
+						<div class="row" id="title"> CHATTING </div>
+						<div class="row" id="content-box">  </div>
+						<div class="row">
+							<input class="col-md-11" id="message"> </input>
+							<button class="col-md-1" id="count" onclick="send()">Enter</button>
+						</div>
+					</div>
+				</div>
+		</div>
+
+		<%- include partial/socket %>
+		
+  </body>
+</html>

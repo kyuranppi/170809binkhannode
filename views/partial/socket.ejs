@@ -1,0 +1,19 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.3/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://new-project-temp-binkhan.c9users.io/');
+  socket.emit('NewNick',{nick: '<%= nickname %>'});
+  socket.on('msg',function(data){
+      console.log(data);
+      document.getElementById('content-box').innerHTML+=data.msg;
+  });
+  socket.on('NickChange',function(data){
+      console.log(data.id);
+      console.log(data.nick);
+  });
+  function send(){
+      msg = document.getElementById('message');
+      socket.emit('msg',{msg:msg.value});
+      msg.value='';
+  }
+  
+</script>
